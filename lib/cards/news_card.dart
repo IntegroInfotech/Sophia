@@ -4,6 +4,7 @@ import 'package:sophia/custom_widgets/custom_text.dart';
 import 'package:sophia/screens/news_detail_page.dart';
 
 class NewsCard extends StatelessWidget {
+  final String id;
   final String title;
   final String description;
   final String imageUrl;
@@ -14,7 +15,8 @@ class NewsCard extends StatelessWidget {
       required this.title,
       required this.description,
       required this.imageUrl,
-      required this.date});
+      required this.date,
+      required this.id});
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +32,10 @@ class NewsCard extends StatelessWidget {
               MaterialPageRoute(
                 builder: (context) => NewsDetailPage(
                   imageUrl: imageUrl,
-                  date:date,
+                  date: date,
                   title: title,
                   description: description,
+                  id: id,
                 ),
               ),
             );

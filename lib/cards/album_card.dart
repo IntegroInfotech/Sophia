@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:sophia/custom_widgets/custom_text.dart';
 
 class AlbumCard extends StatelessWidget {
+  final String id;
   final String? image;
   final String title;
 
-  const AlbumCard({Key? key, required this.image, required this.title})
+  const AlbumCard({Key? key, required this.image, required this.title, required this.id})
       : super(key: key);
 
   @override

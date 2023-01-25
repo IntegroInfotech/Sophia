@@ -5,6 +5,7 @@ import 'package:sophia/cards/news_card.dart';
 import 'package:sophia/custom_widgets/constants.dart';
 import 'package:sophia/custom_widgets/custom_text.dart';
 import 'package:sophia/models/news.dart';
+import 'package:sophia/screens/AlumniScreen.dart';
 import 'package:sophia/screens/cover_photos_page.dart';
 import 'package:sophia/screens/events_of_the_month_page.dart';
 import 'package:sophia/screens/open_url.dart';
@@ -274,10 +275,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           shrinkWrap: true,
                           children: [
                             GestureDetector(
-                              onTap: () => openUrl(context,
-                                  url:
-                                      "https://sophiahighschool.org/alumni1.php",
-                                  color: Constants.primaryColor),
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const AlumniScreen(),
+                                  ),
+                                );
+                              },
                               child: const SizedBox(
                                 height: 50,
                                 child: Center(
@@ -371,6 +376,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         itemBuilder: (BuildContext context, int index) {
                           return GestureDetector(
                             child: NewsCard(
+                              id: sophiaNews[index].id,
                               date: sophiaNews[index].date,
                               title: sophiaNews[index].title,
                               description: sophiaNews[index].description,

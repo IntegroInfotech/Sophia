@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sophia/custom_widgets/constants.dart';
 import 'package:sophia/custom_widgets/custom_text.dart';
 import 'package:sophia/screens/about_us.dart';
-import 'package:sophia/screens/photos_page.dart';
+import 'package:sophia/screens/notice_board.dart';
+import 'package:sophia/screens/photos_screen.dart';
 
 import 'open_url.dart';
 
@@ -46,7 +47,7 @@ class NavMenu extends StatelessWidget {
                                   title: Constants.aboutUsTitle,
                                   description: Constants.aboutUsDescription,
                                   image:
-                                  "http://testlink4clients.com/sophiahighschool/images/gallery/gallery%20(4).jpg",
+                                      "http://testlink4clients.com/sophiahighschool/images/gallery/gallery%20(4).jpg",
                                 ),
                               ),
                             );
@@ -85,7 +86,7 @@ class NavMenu extends StatelessWidget {
                                       GestureDetector(
                                         onTap: () => openUrl(context,
                                             url:
-                                            "https://sophiahighschool.org/scholastic.php",
+                                                "https://sophiahighschool.org/scholastic.php",
                                             color: Constants.primaryColor),
                                         child: const SizedBox(
                                           height: 50,
@@ -102,7 +103,7 @@ class NavMenu extends StatelessWidget {
                                       GestureDetector(
                                         onTap: () => openUrl(context,
                                             url:
-                                            "https://sophiahighschool.org/non_scholastic.php",
+                                                "https://sophiahighschool.org/non_scholastic.php",
                                             color: Constants.primaryColor),
                                         child: const SizedBox(
                                           height: 50,
@@ -148,7 +149,7 @@ class NavMenu extends StatelessWidget {
                                   title: Constants.ourValuesTitle,
                                   description: Constants.ourValuesDescription,
                                   image:
-                                  "http://testlink4clients.com/sophiahighschool/images/gallery/gallery%20(4).jpg",
+                                      "http://testlink4clients.com/sophiahighschool/images/gallery/gallery%20(4).jpg",
                                 ),
                               ),
                             );
@@ -181,7 +182,7 @@ class NavMenu extends StatelessWidget {
                                   title: Constants.ourStrategyTitle,
                                   description: Constants.ourStrategyDescription,
                                   image:
-                                  "http://testlink4clients.com/sophiahighschool/images/gallery/gallery%20(4).jpg",
+                                      "http://testlink4clients.com/sophiahighschool/images/gallery/gallery%20(4).jpg",
                                 ),
                               ),
                             );
@@ -214,7 +215,7 @@ class NavMenu extends StatelessWidget {
                                   title: Constants.ourMissionTitle,
                                   description: Constants.ourMissionDescription,
                                   image:
-                                  "http://testlink4clients.com/sophiahighschool/images/gallery/gallery%20(4).jpg",
+                                      "http://testlink4clients.com/sophiahighschool/images/gallery/gallery%20(4).jpg",
                                 ),
                               ),
                             );
@@ -238,7 +239,9 @@ class NavMenu extends StatelessWidget {
                     children: [
                       Expanded(
                         child: GestureDetector(
-                          onTap: () => openUrl(context, url: "https://sophiahighschool.org/careers.php", color: Constants.primaryColor),
+                          onTap: () => openUrl(context,
+                              url: "https://sophiahighschool.org/careers.php",
+                              color: Constants.primaryColor),
                           child: const CustomText(
                             title: "CAREERS",
                             color: Colors.white,
@@ -255,14 +258,24 @@ class NavMenu extends StatelessWidget {
                     color: Colors.white,
                   ),
                   Row(
-                    children: const [
+                    children: [
                       Expanded(
-                        child: CustomText(
-                          title: "NOTICE BOARD",
-                          color: Colors.white,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const NoticeBoardScreen(),
+                              ),
+                            );
+                          },
+                          child: const CustomText(
+                            title: "NOTICE BOARD",
+                            color: Colors.white,
+                          ),
                         ),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.arrow_forward_ios,
                         color: Colors.white,
                       ),
@@ -299,14 +312,19 @@ class NavMenu extends StatelessWidget {
                     color: Colors.white,
                   ),
                   Row(
-                    children: const [
+                    children: [
                       Expanded(
-                        child: CustomText(
-                          title: "GET IN TOUCH",
-                          color: Colors.white,
+                        child: GestureDetector(
+                          onTap: () => openUrl(context,
+                              url: "https://sophiahighschool.org/contact.php",
+                              color: Constants.primaryColor),
+                          child: const CustomText(
+                            title: "GET IN TOUCH",
+                            color: Colors.white,
+                          ),
                         ),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.arrow_forward_ios,
                         color: Colors.white,
                       ),

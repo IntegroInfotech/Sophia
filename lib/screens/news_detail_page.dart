@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sophia/custom_widgets/constants.dart';
 import 'package:sophia/custom_widgets/custom_text.dart';
+import 'package:share/share.dart';
 
 class NewsDetailPage extends StatelessWidget {
+  final String id;
   final String title;
   final String description;
   final String imageUrl;
@@ -13,7 +15,8 @@ class NewsDetailPage extends StatelessWidget {
       required this.title,
       required this.description,
       required this.imageUrl,
-      required this.date})
+      required this.date,
+      required this.id})
       : super(key: key);
 
   @override
@@ -81,7 +84,10 @@ class NewsDetailPage extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Share.share('https://sophiahighschool.org/sophia_app/newsshare.php?id=$id',
+              subject: 'news');
+        },
         backgroundColor: Constants.primaryColor,
         child: const Icon(
           Icons.share,
