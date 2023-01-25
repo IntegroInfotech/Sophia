@@ -1,5 +1,5 @@
 import 'package:http/http.dart' as http;
-import 'package:sophia/models/Almni.dart';
+import 'package:sophia/models/Alumni.dart';
 import 'package:sophia/models/cover_photos.dart';
 import 'package:sophia/models/events_of_the_month.dart';
 import 'package:sophia/models/news.dart';

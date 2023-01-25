@@ -4,7 +4,6 @@ import 'package:sophia/custom_widgets/custom_text.dart';
 import 'package:sophia/screens/about_us.dart';
 import 'package:sophia/screens/notice_board.dart';
 import 'package:sophia/screens/photos_screen.dart';
-
 import 'open_url.dart';
 
 class NavMenu extends StatelessWidget {
@@ -292,7 +291,7 @@ class NavMenu extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const PhotosPage(),
+                                builder: (context) => const PhotosScreen(),
                               ),
                             );
                           },

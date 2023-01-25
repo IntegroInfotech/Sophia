@@ -25,11 +25,10 @@ class NewsScreen extends StatelessWidget {
               itemBuilder: (BuildContext context, int index) {
                 return GestureDetector(
                   child: NewsCard(
-                    id: sophiaNews[index].id,
                     date: sophiaNews[index].date,
                     title: sophiaNews[index].title,
                     description: sophiaNews[index].description,
-                    imageUrl: sophiaNews[index].image,
+                    imageUrl: sophiaNews[index].image, id: '',
                   ),
                 );
               },
